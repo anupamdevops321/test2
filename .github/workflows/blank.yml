@@ -12,4 +12,5 @@ jobs:
         run: echo "This is the second repository"
       
       - name: Get Payload
-        run: echo "Message from first repository: ${{ github.event.client_payload.message }}"
+        run: echo "Message from first repository:${{ github.event.client_payload.message }}"
+
