@@ -1,0 +1,15 @@
+name: Triggered Workflow
+
+on:
+  repository_dispatch:
+    types: [trigger-event]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo Message
+        run: echo "This is the second repository"
+      
+      - name: Get Payload
+        run: echo "Message from first repository: ${{ github.event.client_payload.message }}"
